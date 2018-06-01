@@ -1,0 +1,10 @@
+---
+applications:
+
+- name: portfolio
+  instances: 1
+  routes:
+  - route: dlavoie-scdf-portfolio.cfapps.io
+  path: scdf-trading-pipeline-portfolio/target/scdf-trading-pipeline-portfolio-0.0.1-SNAPSHOT.jar
+  health-check-type: process
+  services: ["portfolio-db"]

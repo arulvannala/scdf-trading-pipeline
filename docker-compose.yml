@@ -1,0 +1,21 @@
+---
+version : '2'
+
+services:
+  portfolio-db:
+    image: tutum/mysql
+    environment:
+      - MYSQL_USER=portfolio
+      - MYSQL_PASS=portfolio
+      - ON_CREATE_DB=`portfolio`
+    ports:
+      - 3306:3306
+    networks:
+      - default
+  amqp:
+    image: rabbitmq:3
+    ports:
+    - 4369:4369
+    - 5671:5671
+    - 5672:5672
+    - 25672:25672
